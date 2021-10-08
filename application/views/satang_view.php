@@ -1,0 +1,144 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Hello Satang</title>
+
+</head>
+    <title>My Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+      body {font-size:16px;
+            background-color:#FFFAF0;
+      }
+      .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+      .w3-half img:hover{opacity:1}
+    </style>
+  <body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-green w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+      <div class="w3-container">
+        <h3 class="w3-padding-64"><b>Nalinee<br>Aonthong</b></h3>
+      </div>
+      <div class="w3-bar-block">
+        <a href="<?php echo site_url('Satang/index');?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About Me</a>  
+        <a href="<?php echo site_url('Satang/activity');?>" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity</a>
+        <a href="<?php echo site_url('Satang/work');?>" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Work</a>
+      </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding">
+      <a href="javascript:void(0)" class="w3-button w3-green w3-margin-right" onclick="w3_open()">☰</a>
+      <span>MENU</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+      <!-- !PAGE CONTENT! -->
+      <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+      <!-- Header -->
+      <div class="w3-container" style="margin-top:80px">
+        <h1 class="w3-jumbo"><b>This is My Profile!</b></h1>
+        <h1 class="w3-xxxlarge w3-text-green"><b>My Picture :)</b></h1>
+        <hr style="width:50px;border:5px solid green" class="w3-round">
+      </div>
+  
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img src="<?php echo base_url('img');?>/me.jpg" 
+          style="width:100%" onclick="onClick(this)" alt="This is Me!">
+        </div>
+
+      <!-- Modal for full size images on click-->
+      <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+          <img id="img01" class="w3-image">
+          <p id="caption"></p>
+        </div>
+      </div>
+
+
+      <!-- About Me -->
+      <div class="w3-container" id="about me" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>About Me</b></h1>
+        <hr style="width:50px;border:5px solid green" class="w3-round">
+        <p>ชื่อ : นางสาวนลินี อ่อนทอง</p>
+        <p>ชื่อเล่น : สตางค์</p>
+        <p>วัน/เดือน/ปี เกิด : 13 มกราคม พ.ศ 2544</p>
+        <p>ที่อยู่ : 11/4 หมู่ 1 ตำบลน้ำรึม อำเภอเมืองตาก จังหวัดตาก 63000</P>
+        <p>Email : nalineeaonthong@gmail.com</p>
+      </div>
+
+      <!-- Education -->
+      <div class="w3-container" id="education" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>Education</b></h1>
+        <hr style="width:50px;border:5px solid green" class="w3-round">
+        <p><b>ระดับชั้นประถมศึกษา โรงเรียนเทศบาล 3 วัดชัยชนะสงคราม</b></p>
+        <a href="https://m.facebook.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5-%E0%B9%93-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A1-168287613252482/" target="_blank">ไปยังFacebookของโรงเรียนเทศบาล 3 วัดชัยชนะสงคราม</a>
+
+        <br>
+        <br>
+        <p><b>ระดับชั้นมัธยมศึกษา โรงเรียนตากพิทยาคม</b></p>
+        <a href="https://www.facebook.com/tpstakpittayakhomschool/" target="_blank">ไปยังFacebookของโรงเรียนตากพิทยาคม</a>
+        <br><a href="https://www.tps.ac.th/" target="_blank">ไปยังWebpageของโรงเรียนตากพิทยาคม</a>
+    
+        <br>
+        <br>
+	      <p><b>ระดับอุดมศึกษา มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</b></p>
+    	  <a href="https://www.facebook.com/rmutltakofficial" target="_blank">ไปยังFacebookของมหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</a>
+        <br><a href="https://www.rmutl.ac.th/" target="_blank">ไปยังWebpageของมหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา</a>
+      </div>
+  
+      <!-- My Skill -->
+      <div class="w3-container" id="about me" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>My IT Skills</b></h1>
+        <hr style="width:50px;border:5px solid green" class="w3-round">
+        <ul>
+          <li>HTML</li>
+          <li>การใช้ Adobe Photoshop เบื้องต้น</li>
+          <li>การใช้ Adobe Illustrator เบื้องต้น</li>
+          <li>การใช้ Adobe Premiere Pro เบื้องต้น</li>
+        </ul>
+      </div>
+
+      <!-- End page content -->
+      </div>
+
+    <!-- W3.CSS Container -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+    <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+ 
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    </script>
+
+  </body>
+</html>
